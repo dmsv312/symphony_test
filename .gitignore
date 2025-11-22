@@ -1,0 +1,11 @@
+.env
+.DS_Store
+node_modules/
+/vendor/
+/shopware/var/
+/shopware/vendor/
+/shopware/node_modules/
+/shopware/public/bundles/
+/shopware/public/theme/
+.idea/
+.vscode/
