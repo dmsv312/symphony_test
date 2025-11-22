@@ -14,10 +14,11 @@ RUN apt-get update \
        libxml2-dev \
        libwebp-dev \
        libxpm-dev \
-       libsodium-dev \
     && docker-php-ext-configure gd --with-freetype --with-jpeg --with-webp --with-xpm \
-    && docker-php-ext-install -j$(nproc) intl pdo_mysql gd zip opcache sodium \
-    && docker-php-ext-enable opcache sodium \
+    && docker-php-ext-install -j$(nproc) intl pdo_mysql gd zip opcache \
+    && docker-php-ext-enable opcache \
+    && pecl install sodium \
+    && docker-php-ext-enable sodium \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
